@@ -16,3 +16,13 @@ response=response.json()
 print(response)
 
 
+#wyswietlenie szczegolowych elementow 
+
+print(f"Temperatura dla miasta {city} wynosi {response['current']['temp_c']} stopni Cencjusza.")
+print(f" Cisnienie dla miasta {city} wynosi {response['current']['pressure_mb']} .")
+print(f"Wilgotnosc dla miasta {city} wynosi {response['current']['humidity']} .")
+
+#Informacje ogolne o pogodzie
+
+weather_condition=response['current']['test']
+print(f"Stan pogody w {city} to {weather_condition}")
