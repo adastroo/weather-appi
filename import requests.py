@@ -8,22 +8,24 @@ api_key='c3f45f8793db4e23b1781213250612'
 city=input('podaj miasto dla ktorego chcesz wyswietlic pogode:')
 
 
-user_choice=int(input(f'Wybierz, co chcesz wyświetlić dla {city}: '
-                    f'
- 1) Temperatura'
-                    f'
- 2) Ciśnienie'
-                    f'
- 3) Wilgotność'
-                    f'
- 4) Wszystkie informacje'
-                    f'
- Twój wybór:'
-
-))
+input_message=(f'Wybierz, co chcesz wyświetlić dla {city}: '
+f'\n 1) Temperatura'
+f'\n 2) Ciśnienie'
+f'\n 3) Wilgotność'
+f'\n 4) Wszystkie informacje'
+f'\n Twój wybór:')
 
 
 
+
+user_choice=int(input(input_message))
+
+#zabezpieczenie przed wpisaniem wartosci innej niz z zakresu 1-4
+#wpisanie wartosci do momentu wlasciwego
+while user_choice>4 or user_choice<1:
+    print('nieprawidlowa wartosc')
+    #ponowne wpisanie
+    user_choice=int(input(input_message))
 
 #Utworzenie zapytania bezposrednio do strony internetowej OpenWeathermap
 url = f'http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}&aqi=yes'
