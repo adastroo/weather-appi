@@ -2,7 +2,9 @@ import requests
 # Dodawanie naszego klucza API
 # API KEY PODMIENCIE NA SWOJ
 api_key='c3f45f8793db4e23b1781213250612'
-city='Warszawa'
+#wpisywanie miasta do zbierania pogody
+
+city=input('podaj miasto dla ktorego chcesz wyswietlic pogode:')
 
 #Utworzenie zapytania bezposrednio do strony internetowej OpenWeathermap
 url = f'http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}&aqi=yes'
@@ -26,3 +28,4 @@ print(f"Wilgotnosc dla miasta {city} wynosi {response['current']['humidity']} ."
 
 weather_condition= response['current']['condition']['text']
 print(f"Stan pogody w {city} to {weather_condition}")
+
