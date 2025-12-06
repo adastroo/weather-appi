@@ -17,13 +17,20 @@ f'\n Twój wybór:')
 
 
 
+#Zapezpieczenie przed wpisaniem wartości innej niż liczba
+while True:
+    try:
+        user_choice=int(input(input_message))
+        if 1<=user_choice<=4: 
+            break #petla sie zakonczy bo wartość jest prawidłowa
+        else:
+            print('Wybór powinien być pomiędzy 1 a 4.')
+    except ValueError:
+        print('Wybór jest nieprawidłowy. Spróbuj ponownie')
 
-user_choice=int(input(input_message))
 
-#zabezpieczenie przed wpisaniem wartosci innej niz z zakresu 1-4
-#wpisanie wartosci do momentu wlasciwego
-while user_choice>4 or user_choice<1:
-    print('nieprawidlowa wartosc')
+
+
     #ponowne wpisanie
     user_choice=int(input(input_message))
 
