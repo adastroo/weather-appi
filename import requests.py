@@ -24,5 +24,5 @@ print(f"Wilgotnosc dla miasta {city} wynosi {response['current']['humidity']} ."
 
 #Informacje ogolne o pogodzie
 
-weather_condition=response['current']['test']
+weather_condition= response['current']['condition']['text']
 print(f"Stan pogody w {city} to {weather_condition}")
